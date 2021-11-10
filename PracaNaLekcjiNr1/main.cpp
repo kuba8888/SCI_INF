@@ -7,7 +7,7 @@ class cipher
 	public:
 		char text[1000],ch;
 		int lenght;
-		int key = 333;
+		int key = 10;
 	void read()
 	{
 		cout << "Write a message that you want to encrypt: ";
