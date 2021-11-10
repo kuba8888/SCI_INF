@@ -30,14 +30,6 @@ class cipher
 		}
 		printf("Encrypted message: %s \n", text);
 	}
-	/*void print()
-	{
-		cout << "Encrypted message: ";
-		for(int i = 0; i < lenght; i++)
-		{
-			cout << text[i];
-		}
-	}*/
 
 };
 
