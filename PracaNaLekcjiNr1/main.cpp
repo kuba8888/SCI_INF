@@ -5,9 +5,9 @@ using namespace std;
 class cipher
 {
 	public:
-		char text[1000],ch;
+		char text[1000];
 		int lenght;
-		int key = 10;
+		int key = 27;
 	void read()
 	{
 		cout << "Write a message that you want to encrypt: ";
@@ -16,16 +16,13 @@ class cipher
 	}
 	void encryptCaesar()
 	{
+		char ch;
 		for (int i = 0; i<lenght;i++)
 		{
 			ch = text[i];
 			if (ch >='a' && ch <='z')
 			{
-				ch = ch + key;
-			}
-			if (ch > 'z')
-			{
-				ch = ch - 'z' + 'a' - 1;
+				ch = ((ch -'a' + key)% 26)+'a';
 			}
 			text[i] = ch;
 		}
@@ -51,8 +48,6 @@ class cipher
 	}
 
 };
-
-
 
 int main()
 {
