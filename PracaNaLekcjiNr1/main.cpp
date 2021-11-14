@@ -26,13 +26,14 @@ class Cipher
 			return;
 		}
 
-		for (int i = 0; i<lenght;i++)
+		for (int i = 0; i < lenght; i++)
 		{
 			ch = text[i];
-			if (ch >='a' && ch <='z')
+			if (ch >= 'a' && ch <= 'z')
 			{
-				ch = ((ch -'a' + key)% 26)+'a';
+				ch = ((ch - 'a' + key)% 26) + 'a';
 			}
+
 			text[i] = ch;
 		}
 		printf("Encrypted using caesar cipher: %s \n", text);
@@ -49,20 +50,22 @@ class Cipher
 			return;
 		}
 
-		for (int i = 0; i<lenght;i++)
+		for (int i = 0; i < lenght; i++)
 		{
 			ch = text[i];
-			if (ch >='a' && ch <='z')
+			if (ch >= 'a' && ch <= 'z')
 			{
-				ch = ((ch -'a' + 26-key)% 26)+'a';
+				ch = ((ch - 'a' + (26 - key))% 26) + 'a';
 			}
+
+			text[i] = ch;
 		}
 		printf("Decrypted using caesar cipher: %s \n", text);
 	}
 
 	void transposition()
 	{
-		for(int i =0; i<lenght-1; i+=2)
+		for(int i = 0; i < lenght - 1; i += 2)
 		{
 			char ch2;
 			ch2 = text[i];
@@ -78,10 +81,13 @@ class Cipher
 int main()
 {
 	int cipherChoice;
-	
 	Cipher obj;
 	obj.read();
-	cout << "What do you want to do? \n 1. Encrypt in caesar cipher \n 2. Decrypt caesar cipher \n 3. Encrypt/decrypt in transposition cipher \n 4. Encrypt in both \n";
+	cout << "What do you want to do? \n";
+	cout <<	"1. Encrypt in caesar cipher \n";
+	cout <<	"2. Decrypt caesar cipher \n"; 
+	cout <<	"3. Encrypt/decrypt in transposition cipher \n"; 
+	cout <<	"4. Encrypt in both \n";
 	cin >> cipherChoice;
 	
 	switch(cipherChoice)
