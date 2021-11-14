@@ -14,6 +14,7 @@ class Cipher
 		cin.getline(text, 1000);
 		lenght = strlen(text);
 	}
+
 	void encryptCaesar()
 	{
 		char ch;
@@ -36,6 +37,7 @@ class Cipher
 		}
 		printf("Encrypted using caesar cipher: %s \n", text);
 	}
+
 	void decryptCaesar()
 	{
 		char ch;
@@ -52,16 +54,12 @@ class Cipher
 			ch = text[i];
 			if (ch >='a' && ch <='z')
 			{
-				ch = ch - key;
+				ch = ((ch -'a' + 26-key)% 26)+'a';
 			}
-			if (ch < 'a')
-			{
-				ch = ch + 'z' - 'a' + 1;
-			}
-			text[i] = ch;
 		}
 		printf("Decrypted using caesar cipher: %s \n", text);
 	}
+
 	void transposition()
 	{
 		for(int i =0; i<lenght-1; i+=2)
@@ -106,3 +104,5 @@ int main()
 			return 0;
 	}
 }
+
+
