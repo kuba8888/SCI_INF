@@ -115,8 +115,8 @@ class Cipher
 	}
 	void printRsa()
 	{
-		cout << "klucz publiczny: " << "n: " <<  n << " " << "e: " << e << endl;
-		cout << "klucz prywatny: " << "n: " << n << " " << "d: " << d << endl;
+		cout << "public key" << "n: " <<  n << " " << "e: " << e << endl;
+		cout << "private key" << "n: " << n << " " << "d: " << d << endl;
 	}
 
 };
